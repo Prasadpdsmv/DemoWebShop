@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extentreports>
+
+    <configuration>
+
+        <theme>dark</theme>
+
+        <documentTitle>
+            DemoWebsite
+        </documentTitle>
+
+        <reportName>
+            DemoWebsite Suite
+        </reportName>
+
+        <encoding>UTF-8</encoding>
+
+        <protocol>https</protocol>
+
+        <timelineEnabled>true</timelineEnabled>
+
+    </configuration>
+
+</extentreports>
