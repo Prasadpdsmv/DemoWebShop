@@ -1,18 +1,30 @@
 package com.pages;
 
 import com.baseUtility.PLaywrightUtility;
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.Locator;
+import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
 
-public class BooksPage extends PLaywrightUtility {
-    //Page page;
+public class BooksPage {
+      Page page;
+
+    public BooksPage() {
+        this.page= PlaywrightManager.page();
+    }
 
     public void selectBook(String bookName){
         /*Locator locator=page.locator("a")
                 .filter(new Locator.FilterOptions().setHasText(bookName));*/
 
+       /* Locator locator=page.locator("div.item-box")
+                        .filter(new Locator.FilterOptions().setHasText(bookName));*/
+
         Locator locator=page.locator("div.item-box")
-                        .filter(new Locator.FilterOptions().setHasText(bookName));
+                        .filter(new Locator.FilterOptions()
+                                .setHas(page.getByText(bookName, new Page.GetByTextOptions().setExact(true)))
+                        );
+
 
         System.out.println("the locator value: "+ locator);
 

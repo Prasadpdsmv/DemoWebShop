@@ -6,7 +6,7 @@ public class ScreenShotUtility extends PLaywrightUtility {
        /* return ((TakesScreenshot)
                 driver)
                 .getScreenshotAs(OutputType.BYTES);*/
-        byte[] buffer = page.screenshot();
+        byte[] buffer = PlaywrightManager.page().screenshot();
         return buffer;
     }
 }

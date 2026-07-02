@@ -1,0 +1,20 @@
+<suite name="Regression"
+       parallel="tests"
+       thread-count="3">
+    <listeners>
+        <listener class-name="com.baseUtility.Suiteistener"/>
+    </listeners>
+
+    <test name="ChromeTests1">
+        <classes>
+            <class name="com.runner.TestRunner"/>
+        </classes>
+    </test>
+
+    <!--<test name="ChromeTests2">
+        <classes>
+            <class name="com.runner.TestRunner2"/>
+        </classes>
+    </test>-->
+
+</suite>

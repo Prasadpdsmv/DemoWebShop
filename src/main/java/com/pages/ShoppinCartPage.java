@@ -1,6 +1,7 @@
 package com.pages;
 
 import com.baseUtility.PLaywrightUtility;
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.options.AriaRole;
@@ -12,7 +13,7 @@ import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertTha
 
 @Slf4j
 public class ShoppinCartPage extends PLaywrightUtility {
-   // Page page;
+    Page page;
     String INPUT_COUPON_CODE="input[name='discountcouponcode']";
     String ADD_GIFT_CARD="Add gift card";
     String DROPDOWN_COUNTRY="Country:";
@@ -26,7 +27,9 @@ public class ShoppinCartPage extends PLaywrightUtility {
     String SHOPPING_CART_HEADING="Shopping cart";
     String CHECK_BOX="input[type='checkbox']";
 
-
+    public ShoppinCartPage() {
+        this.page= PlaywrightManager.page();
+    }
 
     public void enterCoupnCode(String coupon){
         page.locator(INPUT_COUPON_CODE).fill(coupon);

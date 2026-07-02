@@ -1,5 +1,6 @@
 package com.pages;
 
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.*;
 import com.microsoft.playwright.assertions.PlaywrightAssertions;
@@ -15,8 +16,8 @@ public class DigitalDownloadsPage {
     private String OUT_OF_STOCK = "Out of stock";
     private String ADDED_TO_CART = "The product has been added to your ";
 
-    public DigitalDownloadsPage(Page page) {
-        this.page = page;
+    public DigitalDownloadsPage() {
+        this.page = PlaywrightManager.page();
     }
 
     public void verifyPageHeader() {

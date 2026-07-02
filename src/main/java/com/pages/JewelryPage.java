@@ -1,7 +1,9 @@
 package com.pages;
 
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
+import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.SelectOption;
 
 public class JewelryPage {
@@ -26,8 +28,8 @@ public class JewelryPage {
     private final Locator blackAndWhiteDiamondHeart;
     private final Locator diamondPaveEarrings;
 
-    public JewelryPage(Page page) {
-        this.page = page;
+    public JewelryPage() {
+        this.page = PlaywrightManager.page();
 
 
         this.loginLink = page.locator(".ico-login");

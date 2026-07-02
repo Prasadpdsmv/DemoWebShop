@@ -19,6 +19,8 @@ public class Hooks {
         PLaywrightUtility.setUpPage();
     }*/
 
+
+
     @AfterStep
     public void takeScreenshot(Scenario scenario) {
         String screenshotName =

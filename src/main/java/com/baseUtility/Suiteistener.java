@@ -10,7 +10,9 @@ public class Suiteistener implements ISuiteListener {
     @Override
     public void onStart(ISuite suite) {
         System.out.println("this is before suite");
-        PLaywrightUtility.setUpPage();
+       // PLaywrightUtility.setUpPage();
+        // we created PlaywrightManager to support parallel testing
+        PlaywrightManager.initialize();
     }
 
     @Override
@@ -19,7 +21,7 @@ public class Suiteistener implements ISuiteListener {
 
         try {
 
-            PLaywrightUtility.browserContext.tracing().stop(
+            PlaywrightManager.browserContext().tracing().stop(
                     new Tracing.StopOptions()
                             .setPath(
                                     Paths.get(
@@ -31,7 +33,7 @@ public class Suiteistener implements ISuiteListener {
             e.printStackTrace();
         }
 
-        if (PLaywrightUtility.page != null) {
+       /* if (PLaywrightUtility.page != null) {
             PLaywrightUtility.page.close();
         }
 
@@ -45,6 +47,10 @@ public class Suiteistener implements ISuiteListener {
 
         if (PLaywrightUtility.playWright != null) {
             PLaywrightUtility.playWright.close();
-        }
+        }*/
+
+        // replced with PlaywrightManager manager class
+
+        PlaywrightManager.close();
     }
 }

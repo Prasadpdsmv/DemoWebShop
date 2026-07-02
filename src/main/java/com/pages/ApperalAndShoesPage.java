@@ -1,6 +1,7 @@
 package com.pages;
 
 import com.baseUtility.PLaywrightUtility;
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.Page;
 import com.microsoft.playwright.Response;
@@ -8,8 +9,8 @@ import com.microsoft.playwright.assertions.PlaywrightAssertions;
 import com.microsoft.playwright.options.AriaRole;
 import com.microsoft.playwright.options.WaitForSelectorState;
 
-public class ApperalAndShoesPage extends PLaywrightUtility {
-    //Page page;
+public class ApperalAndShoesPage {
+    Page page;
     private String PAGE_TITLE="Apparel & Shoes";
     private String SOTRING_PRODUCTS=".products-orderby";
     private String DISPLAY_PAGES=".products-pagesize";
@@ -18,6 +19,9 @@ public class ApperalAndShoesPage extends PLaywrightUtility {
     private String OutOfStock="Out of stock";
     private String AddedToCart="The product has been added to your ";
 
+    public ApperalAndShoesPage() {
+        this.page = PlaywrightManager.page();
+    }
 
     public void clickOnApperalAndShoes(){
 

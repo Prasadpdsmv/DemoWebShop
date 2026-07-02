@@ -1,6 +1,7 @@
 package com.pages;
 
 import com.baseUtility.PLaywrightUtility;
+import com.baseUtility.PlaywrightManager;
 import com.microsoft.playwright.Download;
 import com.microsoft.playwright.Locator;
 import com.microsoft.playwright.*;
@@ -12,11 +13,17 @@ import org.slf4j.LoggerFactory;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
-public class DemoWebsitePage extends PLaywrightUtility {
+public class DemoWebsitePage  {
+
+    Page page;
 
     private static final Logger log = LoggerFactory.getLogger(DemoWebsitePage.class);
     public String WIDGETS_MENU="Widgets";
     private String INTERACTIONS="Interactions";
+
+    public DemoWebsitePage() {
+        this.page = PlaywrightManager.page();
+    }
 
     private Locator selectMenu(String menu){
      /* return   page.locator("ul.nav navbar-nav")
